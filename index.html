@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Game of Thrones API</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				$('#targaryen').click(function(){
+
+				$(document).on('click', '#targaryen', function(){
+				})
+
+				$.get('http://anapioficeandfire.com/api/houses/378', function(res) {
+					console.log(res);
+					var targ = "";
+        			targ += "<h1>Name: " + res.name + "</h1>";
+        			targ += "<h2>Words: " + res.words + "</h2>";
+
+        			for (var i = 0; i < res.titles.length; i++){
+        			targ += "<h3>Titles: " + res.titles[i] + "</h3>";
+        			}
+        		
+        		$('#info').html(targ);
+ 
+        		}, 'json');
+				})
+
+
+				$('#baratheon').click(function(){
+
+				$(document).on('click', '#baratheon', function(){
+				})
+
+				$.get('http://anapioficeandfire.com/api/houses/17', function(res) {
+					console.log(res);
+					var bara = "";
+        			bara += "<h1>Name: " + res.name + "</h1>";
+        			bara += "<h2>Words: " + res.words + "</h2>";
+
+        			for (var i = 0; i < res.titles.length; i++){
+        			bara += "<h3>Titles: " + res.titles[i] + "</h3>";
+        			}
+        		
+        		$('#info').html(bara);
+    
+        		}, 'json');
+				})
+
+
+				$('#stark').click(function(){
+
+				$(document).on('click', '#stark', function(){
+				})
+
+				$.get('http://anapioficeandfire.com/api/houses/362', function(res) {
+					console.log(res);
+					var star = "";
+        			star += "<h1>Name: " + res.name + "</h1>";
+        			star += "<h2>Words: " + res.words + "</h2>";
+
+        			for (var i = 0; i < res.titles.length; i++){
+        			star += "<h3>Titles: " + res.titles[i] + "</h3>";
+        			}
+        		
+        		$('#info').html(star);
+
+        		}, 'json');
+				})
+
+
+				$('#lannister').click(function(){
+
+				$(document).on('click', '#lannister', function(){
+				})
+
+				$.get('http://anapioficeandfire.com/api/houses/229', function(res) {
+					console.log(res);
+					var lann = "";
+        			lann += "<h1>Name: " + res.name + "</h1>";
+        			lann += "<h2>Words: " + res.words + "</h2>";
+
+        			for (var i = 0; i < res.titles.length; i++){
+        			lann += "<h3>Titles: " + res.titles[i] + "</h3>";
+        			}
+        		
+        		$('#info').html(lann);
+     
+        		}, 'json');
+				})
+
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="baratheon">
+				<img src="baratheon.png">
+			</div>
+			<div id="lannister">
+				<img src="lannister.jpg">
+			</div>
+			<div id="stark">
+				<img src="stark.jpg">
+			</div>
+			<div id="targaryen">
+				<img src="targaryen.jpg">
+			</div>
+				<fieldset>
+					<legend>House Details</legend>
+					<p id="info"></p>
+				</fieldset>
+		</div>
+	</body>
+</html>
+
+<!-- "url": "http://www.anapioficeandfire.com/api/houses/17",
+"name": "House Baratheon of Storm's End", -->
+
+<!--   "url": "http://www.anapioficeandfire.com/api/houses/362",
+    "name": "House Stark of Winterfell", -->
+
+<!--         "url": "http://www.anapioficeandfire.com/api/houses/229",
+    "name": "House Lannister of Casterly Rock", -->
